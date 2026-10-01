@@ -290,36 +290,11 @@ window.PORTFOLIO = {
           "id": "results",
           "label": "Results",
           "paras": [
-            "The assembled prototype (below) validated the full detection-to-alert pipeline: simulated impact events beyond the calibrated angle threshold correctly triggered a GPS lookup and an outbound SMS carrying a live location link, while normal handling and braking did not produce false triggers. The obstacle and drowsiness sensors performed as designed in bench testing."
+            "The assembled prototype validated the full detection-to-alert pipeline: simulated impact events beyond the calibrated angle threshold correctly triggered a GPS lookup and an outbound SMS carrying a live location link, while normal handling and braking did not produce false triggers. The obstacle and drowsiness sensors performed as designed in bench testing."
           ]
         }
       ],
-      "figures": [
-        {
-          "src": "assets/images/project-01-figure-1-flowchart.png",
-          "caption": "Figure 1 — System logic flowchart: from angle-threshold crash detection to GPS fix to GSM alert dispatch.",
-          "alt": "System logic flowchart for the accident detection system: angle-threshold crash detection triggers a GPS fix and a GSM alert dispatch.",
-          "n": 1,
-          "width": 594,
-          "height": 689
-        },
-        {
-          "src": "assets/images/project-01-figure-2-circuit.png",
-          "caption": "Figure 2 — Implemented circuit: Arduino Nano, MPU6050 IMU, SIM800L GSM, SUP500F GPS, and dual IR proximity sensors.",
-          "alt": "Fritzing circuit diagram of the accident location tracking system showing an Arduino Nano wired to an MPU6050 IMU, SIM800L GSM module, SUP500F GPS module and two FC-51 IR proximity sensors.",
-          "n": 2,
-          "width": 1494,
-          "height": 864
-        },
-        {
-          "src": "assets/images/project-01-figure-3-prototype.jpg",
-          "caption": "Figure 3 — Working scale prototype: IMU, GSM/GPS modules, and proximity sensors mounted on the test chassis.",
-          "alt": "Working scale prototype of the accident location tracking system with IMU, GSM and GPS modules and proximity sensors mounted on the test chassis.",
-          "n": 3,
-          "width": 1251,
-          "height": 1390
-        }
-      ],
+      "figures": [],
       "challenges": {
         "label": "Challenges",
         "list": [
@@ -468,32 +443,7 @@ window.PORTFOLIO = {
           }
         }
       ],
-      "figures": [
-        {
-          "src": "assets/images/project-02-figure-1-block-diagram.jpg",
-          "caption": "Figure 1 — System block diagram: sensor inputs (vibration, load cell, ultrasonic) routed through Arduino Nano / NodeMCU to GSM, GPS, buzzer, and companion app.",
-          "alt": "System block diagram of the IoT vehicle security alarm: vibration, load cell and ultrasonic sensor inputs routed through Arduino Nano and NodeMCU to GSM, GPS, buzzer and the companion mobile app.",
-          "n": 1,
-          "width": 675,
-          "height": 490
-        },
-        {
-          "src": "assets/images/project-02-figure-2-circuit.png",
-          "caption": "Figure 2 — Full circuit: NodeMCU, Arduino Nano, ultrasonic sensor, HX711 load cell, and GPS module wiring.",
-          "alt": "Full circuit wiring of the IoT vehicle security alarm system showing NodeMCU, Arduino Nano, ultrasonic sensor, HX711 load-cell module and GPS module.",
-          "n": 2,
-          "width": 677,
-          "height": 382
-        },
-        {
-          "src": "assets/images/project-02-figure-3-prototype.jpg",
-          "caption": "Figure 3 — Assembled prototype with GPS antenna, sensor modules, and power stage mounted on the test board.",
-          "alt": "Assembled prototype of the IoT vehicle security alarm system with GPS antenna, sensor modules and power stage mounted on the test board.",
-          "n": 3,
-          "width": 1018,
-          "height": 1358
-        }
-      ],
+      "figures": [],
       "challenges": {
         "label": "Challenges",
         "list": [

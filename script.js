@@ -578,7 +578,10 @@
           ])
         ]),
 
-        el('div', { class: 'figures' }, proj.figures.map(figureNode)),
+        /* Figures are optional — render the gallery only when one exists. */
+        proj.figures && proj.figures.length
+          ? el('div', { class: 'figures' }, proj.figures.map(figureNode))
+          : null,
 
         el('div', { class: 'project__notes' }, [
           noteColumn(proj.challenges),

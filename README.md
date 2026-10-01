@@ -26,7 +26,7 @@ framework, and no backend. Everything is readable straight from `index.html`.
 | 03 | Skills    | Toolset cards — simulation & analysis, design & CAD, programming & data, energy & embedded |
 | 04 | Experience| Industrial placement (Digital Power and Associates Ltd. — Orion Group) with impact stats |
 | 05 | Research  | Hybrid off-grid energy system thesis — metadata, abstract, results metrics, conclusion |
-| 06 | Projects  | Two flagship projects with snapshot panel, objectives, methodology, figures, challenges/lessons/future |
+| 06 | Projects  | Two flagship projects with snapshot panel, objectives, methodology, challenges/lessons/future (text only — site displays just the profile photo) |
 | 07 | Contact   | Email, phone, addresses, social links |
 
 Sections such as certifications, achievements, and publications were **intentionally
@@ -42,11 +42,11 @@ invented.
 - ✅ Animated meshing gears (SVG generated in JS, tooth-grid phase-locked, opposite spins)
 - ✅ Gears stay subtle and readable — contrast-tuned strokes, clipped overflow, never causes horizontal scrolling (verified 320 px → 1440 px)
 - ✅ Scroll-reveal animations, scroll-spy navigation, blueprint grid parallax
-- ✅ Figure lightbox (`<dialog>`) with keyboard support: Enter opens, Esc closes, focus returns to the trigger
+- ✅ Figure lightbox (`<dialog>`) built in and keyboard-ready (Enter opens, Esc closes, focus returns) — activates automatically if figures are ever added
 - ✅ Mobile nav (≤ 900 px) with `aria-expanded`, Esc-to-close
 - ✅ Skip link, semantic landmarks/headings, `aria-current` scroll-spy, visible `:focus-visible` rings
 - ✅ `prefers-reduced-motion` honored (gears stop, reveals shown instantly, smooth scroll off)
-- ✅ SEO: title, meta description, Open Graph + Twitter card, favicon, apple-touch-icon, semantic headings, image alt text
+- ✅ SEO: title, meta description, Open Graph + Twitter card, semantic headings, image alt text
 - ✅ **Lighthouse: Accessibility 100 · Best Practices 100 · SEO 100**
 - ✅ No-JS fallback: content stays visible without JavaScript (`<noscript>` note included)
 
@@ -127,12 +127,8 @@ git push -u origin main
 
 ### Post-deploy touch-up
 
-Because the site uses **relative paths only**, no path rewriting is needed — but update
-the Open Graph image URL in `index.html` to an absolute URL so link previews work:
-
-```html
-<meta property="og:image" content="https://<your-username>.github.io/<repo-name>/assets/images/og-cover.png">
-```
+None needed — `og:image` already uses an absolute URL (the hosted profile photo), so link
+previews work out of the box.
 
 Custom domain? Add a `CNAME` file and configure DNS — nothing else changes.
 
@@ -156,7 +152,7 @@ Common edits:
 | Skill cards | `skills` |
 | Job / placement details, stats | `experience` |
 | Thesis abstract, metrics, metadata | `research` |
-| Projects (objectives, figures, notes…) | `projects` |
+| Projects (objectives, notes…) | `projects` |
 | Focus-area chips | `focusAreas` |
 
 Tips:
@@ -194,8 +190,13 @@ To use **only** a local file instead (recommended for long-term reliability), se
 
 ### Project figures
 
-1. Drop files into `assets/images/` (keep names URL-friendly: lowercase, hyphens).
-2. Reference them inside the relevant project's `figures` array:
+**Current decision: the site shows no figure images — only the profile photo.** Both
+projects render as clean text (snapshot, objectives, methodology, notes), and no
+`assets/` upload is required to publish.
+
+If you ever want a figure back: drop the file into `assets/images/`, upload the `assets`
+folder alongside your files, then add it to that project's `figures` array — the gallery
+and lightbox re-appear automatically:
 
 ```js
 { "src": "assets/images/my-figure.png", "alt": "Descriptive alt text",
@@ -206,11 +207,9 @@ Always provide `width`/`height` (prevents layout shift) and meaningful `alt` (ac
 
 ### Favicon / social card
 
-- Favicon: `assets/icons/favicon.svg` (+ `favicon.png` 32×32 fallback), `apple-touch-icon.png` 180×180.
-- Social share image: `assets/images/og-cover.png` (1200×630 recommended).
-
-Replace the files in place — the `<link>`/`<meta>` tags in `index.html` already point to
-them.
+- **Favicon:** links removed — the browser shows its default tab icon (no image files needed).
+- **Social share image:** `og:image` points directly at the hosted profile photo, so
+  WhatsApp/Facebook/LinkedIn/X previews show your portrait automatically.
 
 ---
 
@@ -218,18 +217,18 @@ them.
 
 ```
 portfolio/
-├── index.html          # Entry point (section shells, SEO/OG meta, favicon links)
+├── index.html          # Entry point (section shells, SEO/OG meta)
 ├── style.css           # Design system, layout, animations, responsive, a11y, print
 ├── script.js           # Gear engine + content renderers + interactions
 ├── content.js          # ★ Single source of truth for all personal content
 ├── README.md
 ├── .gitignore
 └── assets/
-    ├── icons/          # favicon.svg, favicon.png, apple-touch-icon.png
-    └── images/         # profile.jpg, og-cover.png, project figures
+    └── images/
+        └── profile.jpg   # Local backup of the profile photo (imgbb is primary)
 ```
 
 ## License / attribution
 
-Content and images © Syed Md Mehedi Hasan. Replace the sample figures and copy with your
+Content and images © Syed Md Mehedi Hasan. Replace the copy with your
 own before publishing if you fork this as a template.
