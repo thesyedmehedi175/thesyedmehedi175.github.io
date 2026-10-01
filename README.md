@@ -172,18 +172,25 @@ Tips:
 
 ### Profile photo
 
-1. Save your image as `assets/images/profile.jpg`
-   - Recommended: **portrait 4:5** (e.g. 800×1000 or 512×640), JPEG, < 300 KB.
-   - The `profile-plate` CSS already applies `aspect-ratio: 4/5` + `object-fit: cover`, so
-     any near-portrait crop will look right.
-2. Set the path in `content.js`:
+**Current setup:** `content.js` points `profile.photo` at the hosted imgbb URL, with the
+repo copy as an automatic fallback if that link ever dies:
+
+```js
+"photo": "https://i.ibb.co.com/4RFjFsz3/1786455589728.jpg",
+"photoBackup": "assets/images/profile.jpg",
+```
+
+To use **only** a local file instead (recommended for long-term reliability), set:
 
 ```js
 "photo": "assets/images/profile.jpg",
 ```
 
-Leave `photo` out (or set it to `""`) to fall back to the built-in engineering monogram
-nameplate — no broken images either way.
+- Recommended image shape: **portrait 4:5** (e.g. 800×1000 or 512×640), JPEG, < 300 KB.
+- The `profile-plate` CSS already applies `aspect-ratio: 4/5` + `object-fit: cover`, so
+  any near-portrait crop will look right.
+- Leave `photo` out (or set it to `""`) to fall back to the built-in engineering monogram
+  nameplate — no broken images either way.
 
 ### Project figures
 

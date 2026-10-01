@@ -22,7 +22,8 @@ window.PORTFOLIO = {
       "I work across ANSYS, ANSYS Fluent, Abaqus, HOMER Pro, SolidWorks, AutoCAD, MATLAB, and Python. I'm a member of ASME, a graduate student member of IEEE, and a member of the Bangladesh Society of Mechanical Engineers (BSME).",
       "I'm currently looking for roles where I can apply simulation and hands-on maintenance experience to real industrial equipment, and I'm open to research collaboration in mechanical engineering, aerospace, CFD, or energy systems."
     ],
-    "photo": "assets/images/profile.jpg",
+    "photo": "https://i.ibb.co.com/4RFjFsz3/1786455589728.jpg",
+    "photoBackup": "assets/images/profile.jpg",
     "memberships": [
       "Member, American Society of Mechanical Engineers (ASME)",
       "Graduate Student Member, Institute of Electrical and Electronics Engineers (IEEE)",

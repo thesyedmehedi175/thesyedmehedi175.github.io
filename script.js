@@ -278,12 +278,20 @@
 
   function profilePlate(p) {
     if (p.photo) {
-      return el('img', {
+      const img = el('img', {
         src: p.photo,
         alt: 'Portrait of ' + p.name,
         width: '400',
-        height: '500'
+        height: '500',
+        /* If the hosted (imgbb) link ever fails, fall back to the local copy. */
+        onerror: function () {
+          if (p.photoBackup && !img.dataset.fb) {
+            img.dataset.fb = '1';
+            img.src = p.photoBackup;
+          }
+        }
       });
+      return img;
     }
     // "Syed Md Mehedi Hasan" -> "SMH" (collapse repeated initials)
     const initials = p.name.split(/\s+/)
